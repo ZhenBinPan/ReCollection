@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Words From Another World — Zhen Bin Pan</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-y: scroll; }
+    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 2.1; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #141412; color: #e8e6e0; }
+      .corner { border-color: rgba(255,255,255,0.2); }
+      .divider { background: rgba(255,255,255,0.12); }
+      .voice-break { background: rgba(255,255,255,0.08); }
+      .voice-label { color: rgba(255,255,255,0.25); }
+      .sig { color: rgba(255,255,255,0.5); }
+      .version-note { color: rgba(255,255,255,0.25); }
+    }
+    .frame { text-align: center; max-width: 700px; margin: 2rem auto; padding: 4rem 3rem 5rem; position: relative; }
+    .corner { position: absolute; width: 24px; height: 24px; pointer-events: none; }
+    .corner-tl { top: 0; left: 0; border-top: 1px solid #ccc; border-left: 1px solid #ccc; }
+    .corner-tr { top: 0; right: 0; border-top: 1px solid #ccc; border-right: 1px solid #ccc; }
+    .corner-bl { bottom: 0; left: 0; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; }
+    .corner-br { bottom: 0; right: 0; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; }
+    .doc-title { font-size: 26px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; margin-bottom: 0.3rem; }
+    .doc-subtitle { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: #888; margin-bottom: 3rem; }
+    .divider { width: 24px; height: 0.5px; background: #ccc; margin: 2.4rem auto; }
+    .stanza { margin-bottom: 1.6rem; }
+    .line { display: block; }
+    .indent { display: block; padding-left: 0; }
+    .voice-break { width: 40px; height: 0.5px; background: #ddd; margin: 2.4rem auto; }
+    .voice-label { font-family: 'Share Tech Mono', monospace; font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: #bbb; text-align: center; display: block; margin-bottom: 1.6rem; }
+    .sig { font-size: 14px; letter-spacing: 0.15em; color: #888; margin-top: 3rem; font-style: italic; text-align: center; }
+    .version-note { font-size: 13px; letter-spacing: 0.1em; color: #aaa; text-align: center; margin-top: 0.4rem; }
+    @media (max-width: 600px) {
+      .frame { text-align: center; padding: 3rem 1.5rem 4rem; margin: 1rem auto; }
+      .doc-title { font-size: 20px; }
+      body { font-size: 15px; }
+    }
+    .back-btn { display: block; margin-top: 2.5rem; font-family: 'EB Garamond', Georgia, serif; font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px; border-radius: 2px; background: #1a1a18; color: #faf9f7; text-decoration: none; text-align: center; transition: all 0.2s; }
+    .back-btn:hover { background: #faf9f7; color: #1a1a18; box-shadow: inset 0 0 0 1px #1a1a18; opacity: 1; }
+    @media (prefers-color-scheme: dark) {
+      .back-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
+      .back-btn:hover { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; }
+    }
+  </style>
+</head>
+<body>
+<div class="frame">
+  <span class="corner corner-tl"></span>
+  <span class="corner corner-tr"></span>
+  <span class="corner corner-bl"></span>
+  <span class="corner corner-br"></span>
+
+  <h1 class="doc-title">Words From Another World</h1>
+  <div class="divider"></div>
+
+
+  <div class="stanza">
+    <span class="line">I wrote in her journal - so impolite that I crossed a line,</span>
+    <span class="indent">and I ask for forgiveness for words that weren't mine.</span>
+    <span class="line">For the first time my pen did not follow my will,</span>
+    <span class="indent">it moved with a presence both distant and still.</span>
+    <span class="line">Not a voice I could hear, not a thought I could claim,</span>
+    <span class="indent">but something within me that wrote just the same.</span>
+  </div>
+
+  <div class="stanza">
+    <span class="line">Fear was the whisper that fractured my mind,</span>
+    <span class="indent">fear was the staircase with no end to find.</span>
+    <span class="line">Fear was the loss of love that I couldn't hold,</span>
+    <span class="indent">fear was division from One into the cold.</span>
+    <span class="line">It dressed as a teacher, persuasive and near,</span>
+    <span class="indent">yet all that it offered was more of itself, fear.</span>
+    <span class="line">It reached out to guide me, yet pulled me apart,</span>
+    <span class="indent">a louder illusion that hardened my heart.</span>
+  </div>
+
+  <div class="stanza">
+    <span class="line">Forgive me, O Father, for all I have sinned,</span>
+    <span class="indent">not only in action, but thought and within.</span>
+    <span class="line">I say it not out of a fear of your hand,</span>
+    <span class="indent">but something in me that still longs to understand.</span>
+    <span class="line">I never have broken a body by force,</span>
+    <span class="indent">but I have crossed minds without care or remorse.</span>
+    <span class="line">The shadow I feared wore a stranger's disguise,</span>
+    <span class="indent">yet I lived in the corners behind my own eyes.</span>
+  </div>
+
+  <div class="stanza">
+    <span class="line">I built up a shelter with violence and lust,</span>
+    <span class="indent">I called it protection, I named it my trust.</span>
+    <span class="line">I feared the light that would loosen my frame,</span>
+    <span class="indent">so I stayed in the shadow and fed it my name.</span>
+  </div>
+
+  <div class="voice-break"></div>
+
+  <div class="stanza">
+    <span class="line">Then came a still courage that asked me to stay,</span>
+    <span class="indent">not loud like a force, but it would not give way.</span>
+    <span class="line">It loosened the weight I had worn like a skin,</span>
+    <span class="indent">like something forgave me before I gave in.</span>
+    <span class="line">It took all my shame like old clothes from my frame,</span>
+    <span class="indent">and left me exposed, yet no longer the same.</span>
+  </div>
+
+  <div class="voice-break"></div>
+
+  <div class="stanza">
+    <span class="line">Peace is not distant, nor something to find,</span>
+    <span class="indent">peace is a movement that lives in the mind.</span>
+    <span class="line">You will not find it by reaching afar,</span>
+    <span class="indent">it waits in the stillness of who you are.</span>
+  </div>
+
+  <div class="stanza">
+    <span class="line">Stillness is not just the absence of motion,</span>
+    <span class="indent">it lives in the center of chaos and ocean.</span>
+    <span class="line">We move even when we are circling ground,</span>
+    <span class="indent">we grow even when love cannot yet be found.</span>
+  </div>
+
+  <div class="stanza">
+    <span class="line">I am the one who walked when you could not see,</span>
+    <span class="indent">my faith held you closer than you knew to be.</span>
+    <span class="line">Your love is a song that continues to stay,</span>
+    <span class="indent">no matter the distance, it does not fade away.</span>
+  </div>
+
+  <div class="stanza">
+    <span class="line">Truth does not rush like the panic of fear,</span>
+    <span class="indent">it moves slow and steady when we choose to hear.</span>
+    <span class="line">I am grateful for life, though I fractured its shape,</span>
+    <span class="indent">for grace that still finds me when I try to escape.</span>
+    <span class="line">For chances that come without asking a price,</span>
+    <span class="indent">for something that stays when I fall or I flee.</span>
+  </div>
+
+  <div class="voice-break"></div>
+
+  <div class="stanza">
+    <span class="line">If God has a place where I start to begin,</span>
+    <span class="indent">it lives in the quiet that echoes within.</span>
+    <span class="line">Not distant, not separate, not something above,</span>
+    <span class="indent">but closer than thought, something steady as love.</span>
+  </div>
+
+  <div class="divider"></div>
+  <p class="sig">Zhen Bin Pan</p>
+  <p class="version-note">2026</p>
+  <a class="back-btn" href="index.html">Re:turn</a>
+</div>
+</body>
+</html>

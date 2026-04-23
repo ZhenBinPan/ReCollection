@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NonXensical Chronicles — Zhen Bin Pan</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { overflow-y: scroll; }
+    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 2.1; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #141412; color: #e8e6e0; }
+      .corner { border-color: rgba(255,255,255,0.2); }
+      .nav-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
+      .nav-btn:hover, .nav-btn.active { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; }
+      .part-number { color: rgba(255,255,255,0.3); }
+      .divider { background: rgba(255,255,255,0.12); }
+      .sig { color: rgba(255,255,255,0.5); }
+      .version-note { color: rgba(255,255,255,0.25); }
+      .part-nav-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
+      .part-nav-btn:hover { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; }
+      .back-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
+      .back-btn:hover { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; }
+    }
+    .collection { max-width: 660px; margin: 2rem auto; padding: 4rem 2.5rem 6rem; position: relative; text-align: center; }
+    .corner { position: absolute; width: 24px; height: 24px; pointer-events: none; }
+    .corner-tl { top: 0; left: 0; border-top: 1px solid #ccc; border-left: 1px solid #ccc; }
+    .corner-tr { top: 0; right: 0; border-top: 1px solid #ccc; border-right: 1px solid #ccc; }
+    .corner-bl { bottom: 0; left: 0; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; }
+    .corner-br { bottom: 0; right: 0; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; }
+    .nav { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-bottom: 4rem; }
+    .nav-btn { font-family: 'Share Tech Mono', monospace; font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px; border: none; border-radius: 2px; background: #1a1a18; color: #faf9f7; cursor: pointer; transition: all 0.2s; width: 100%; outline: none; -webkit-tap-highlight-color: transparent; }
+    .nav-btn:focus { outline: none; }
+    .nav-btn:hover, .nav-btn.active { background: #faf9f7; color: #1a1a18; box-shadow: inset 0 0 0 1px #1a1a18; }
+    .part { margin-bottom: 2rem; }
+    .part-header { margin-bottom: 2.5rem; text-align: center; }
+    .part-number { font-family: 'Share Tech Mono', monospace; font-size: 34px; letter-spacing: 0.15em; text-transform: uppercase; color: #aaa; display: block; margin-bottom: 0.4rem; }
+    .part-name { font-family: 'Share Tech Mono', monospace; font-size: 34px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; display: block; }
+    .divider { width: 24px; height: 0.5px; background: #ccc; margin: 1rem auto 0; }
+    .stanza { margin-bottom: 1.4rem; text-align: center; font-family: 'Share Tech Mono', monospace; font-size: 18px; line-height: 2.1; }
+    .line { display: block; }
+    .sig { font-family: 'EB Garamond', Georgia, serif; font-size: 14px; letter-spacing: 0.15em; color: #888; margin-top: 2.5rem; font-style: italic; text-align: center; }
+    .version-note { font-size: 13px; letter-spacing: 0.1em; color: #aaa; text-align: center; margin-top: 0.3rem; }
+    .part-nav { display: grid; gap: 0.5rem; margin-top: 2.5rem; }
+    .part-nav-2 { grid-template-columns: 1fr 1fr; }
+    .part-nav-1 { grid-template-columns: 1fr; }
+    .part-nav-btn { font-family: 'EB Garamond', Georgia, serif; font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px; border: none; border-radius: 2px; background: #1a1a18; color: #faf9f7; cursor: pointer; transition: all 0.2s; width: 100%; outline: none; -webkit-tap-highlight-color: transparent; }
+    .part-nav-btn:hover { background: #faf9f7; color: #1a1a18; box-shadow: inset 0 0 0 1px #1a1a18; opacity: 1; }
+    .back-btn { display: block; font-family: 'EB Garamond', Georgia, serif; font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px; border-radius: 2px; background: #1a1a18; color: #faf9f7; text-decoration: none; text-align: center; transition: all 0.2s; }
+    .back-btn:hover { background: #faf9f7; color: #1a1a18; box-shadow: inset 0 0 0 1px #1a1a18; opacity: 1; }
+    @media (max-width: 600px) {
+      .collection { padding: 3rem 1.25rem 5rem; }
+      .part-name { font-size: 26px; }
+      .nav-btn { font-size: 13px; padding: 14px 10px; letter-spacing: 0.1em; }
+      body { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+<div class="collection">
+  <span class="corner corner-tl"></span>
+  <span class="corner corner-tr"></span>
+  <span class="corner corner-bl"></span>
+  <span class="corner corner-br"></span>
+
+  <div class="nav">
+    <button class="nav-btn active" onclick="show(0)">#1</button>
+    <button class="nav-btn" onclick="show(1)">#2</button>
+    <button class="nav-btn" onclick="show(2)">#3</button>
+  </div>
+
+  <!-- Chronicle #1 -->
+  <div id="p0" class="part">
+    <div class="part-header">
+      <span class="part-number">NonXensical Chronicles</span>
+      <span class="part-name">#1</span>
+      <div class="divider"></div>
+    </div>
+
+    <div class="stanza">
+      <span class="line">They say survive till Twenty-Twenty-Five,</span>
+      <span class="line">All I see is still some pretty penny fight.</span>
+      <span class="line">Everybody is screaming "they terk er jerbs!"</span>
+      <span class="line">Every party is scheming - they're token nobs.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">Major shareholders make your shit falter.</span>
+      <span class="line">Minor sweat shoppers minus sweet suppers.</span>
+      <span class="line">What the fuck is going on?</span>
+      <span class="line">That's the mud we choking on?</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">We did not see the technologic</span>
+      <span class="line">Need this Nazi Tech Bro logic?</span>
+      <span class="line">Wow, Orange Man crazy?</span>
+      <span class="line">Why aren't you mad lately?</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">Their shit mouths speak loud,</span>
+      <span class="line">Those sick snouts preach foul.</span>
+      <span class="line">Fucking brat rat faking bright Mighty Mouse,</span>
+      <span class="line">Funding fat bat making White haunted House.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">Fools set rules for clowns with crowns,</span>
+      <span class="line">Tools let loose for ground and pound.</span>
+      <span class="line">Fake fame, make claims, all gain no blame.</span>
+      <span class="line">Snake game, take names, all pain no shame.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">It's Evil, with the know how, they got it no doubt.</span>
+      <span class="line">Its ill will, slithers below now, we gotta roll out.</span>
+      <span class="line">"I thought we had advanced in entirety"</span>
+      <span class="line">A thought we had enhanced in anxiety.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">Why some sent away whining and dying</span>
+      <span class="line">While scums spend days wining and dining?</span>
+      <span class="line">Old World Police, unfold, New World Bullies,</span>
+      <span class="line">Whole world peace on hold, knew who pulled this?</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">For no more mystery if we know more history,</span>
+      <span class="line">For sure more misery if they stole more victory.</span>
+      <span class="line">Get that drink out and be who drunk on sobriety,</span>
+      <span class="line">Let that sink in and see those punks in society,</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">Stop the "conquer and divide",</span>
+      <span class="line">Drop the ponder and decide.</span>
+      <span class="line">We pay this price for the errors of tyrants.</span>
+      <span class="line">Make way, it's time for the eras of defiants.</span>
+    </div>
+
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="sig" style="margin-top:1.5rem;">Zhen Bin Pan</div>
+    <div class="version-note">2025</div>
+    <div class="part-nav part-nav-2">
+      <a class="back-btn" href="index.html">Re:turn</a>
+      <button class="part-nav-btn" onclick="show(1)">#2 &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Chronicle #2 -->
+  <div id="p1" class="part" style="display:none">
+    <div class="part-header">
+      <span class="part-number">NonXensical Chronicles</span>
+      <span class="part-name">#2</span>
+      <div class="divider"></div>
+    </div>
+
+    <div class="stanza">
+      <span class="line">AI had been bitching for a while now,</span>
+      <span class="line">And I'd been itching for a wild "how".</span>
+      <span class="line">Summon that Artificial Intelligence?</span>
+      <span class="line">Somewhat Art is officially unintelligent.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">Art thou ready for Art Foul already?</span>
+      <span class="line">What art is this? It's what artists diss.</span>
+      <span class="line">Enable Stable Diffusion? A labelled staple delusion?</span>
+      <span class="line">You come on! Sense! Sicko! Sick of the commonsensical?</span>
+      <span class="line">Use commonsense! - Slick old trick of the calm and sensical.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">Oh you say you don't want anything hardcore?</span>
+      <span class="line">A Midjourney has met your needs and nothing more?</span>
+      <span class="line">Admit your needs hast let y'all cheat.</span>
+      <span class="line">/Imagine: a pungent aroma punishing a whole Rome of artists.</span>
+      <span class="line">/Imagine: a bludgeoned coma unleashing a-hole trauma of tardists.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">What? So, the fuck is this? An AI art?</span>
+      <span class="line">What soul? The yuck of this! And hate, I start.</span>
+      <span class="line">Shiet, much a rip-off, baffles the feeble, makes a pond of lies.</span>
+      <span class="line">Yet, such a ripple, rattles the people, makes us ponder lives,</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">End'em, or you pay, what thief is all wanna-be roleplay?</span>
+      <span class="line">And then, so you say, what if it's all gonna be okay?</span>
+      <span class="line">I was all riled up but now suddenly I hesitate in that thesis,</span>
+      <span class="line">Ire all piled up and it had made me defecate enough faeces.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">I ask, do eyes, um, stand it? Rarely?</span>
+      <span class="line">Alas, do I understand it? Really?</span>
+      <span class="line">I ain't quasimodo here so I can't predict this.</span>
+      <span class="line">I can't quite see over fear so I can't depict this.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">May this AI be not what true lies I dread.</span>
+      <span class="line">Made this, as I see not what truth lies ahead.</span>
+    </div>
+
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="sig" style="margin-top:1.5rem;">Zhen Bin Pan</div>
+    <div class="version-note">2025</div>
+    <div class="part-nav part-nav-2">
+      <button class="part-nav-btn" onclick="show(0)">&#8592; #1</button>
+      <button class="part-nav-btn" onclick="show(2)">#3 &#8594;</button>
+    </div>
+    <a class="back-btn" style="margin-top:0.5rem;" href="index.html">Re:turn</a>
+  </div>
+
+  <!-- Chronicle #3 -->
+  <div id="p2" class="part" style="display:none">
+    <div class="part-header">
+      <span class="part-number">NonXensical Chronicles</span>
+      <span class="part-name">#3</span>
+      <div class="divider"></div>
+    </div>
+
+    <div class="stanza">
+      <span class="line">So, lately the nights have been insanely long</span>
+      <span class="line">Oh, baby, the fights I've been in, plainly wrong.</span>
+      <span class="line">Sleep depriving myself, I stay up all night singing songs.</span>
+      <span class="line">Sheep arriving by now, I say I'll be alright hearing gongs.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">My mind farts like my behind sharts.</span>
+      <span class="line">Spitting nonsense in sharp fine parts.</span>
+      <span class="line">I ain't a method actor, pretending what I'm not,</span>
+      <span class="line">My anus utters a matter presenting what I'd rot.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">Oh, ain't that "ri-di-culous"?</span>
+      <span class="line">Or instead read it "coolest"</span>
+      <span class="line">I ain't all shy about it,</span>
+      <span class="line">I plain old Shia LaBeoufed it.</span>
+    </div>
+
+    <div class="stanza">
+      <span class="line">For art and farts are both the same,</span>
+      <span class="line">better out than in, I stake my claim.</span>
+      <span class="line">Hold either back and you'll only bloat,</span>
+      <span class="line">so I let it rip and write what I wrote.</span>
+    </div>
+
+    <div class="divider" style="margin-top:2rem;"></div>
+    <div class="sig" style="margin-top:1.5rem;">Zhen Bin Pan</div>
+    <div class="version-note">2025</div>
+    <div class="part-nav part-nav-2">
+      <button class="part-nav-btn" onclick="show(1)">&#8592; #2</button>
+      <a class="back-btn" href="index.html">Re:turn</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function show(i) {
+  ['p0','p1','p2'].forEach((id,j) => {
+    document.getElementById(id).style.display = i===j ? 'block' : 'none';
+  });
+  document.querySelectorAll('.nav-btn').forEach((b,j) => {
+    b.classList.toggle('active', i===j);
+  });
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
