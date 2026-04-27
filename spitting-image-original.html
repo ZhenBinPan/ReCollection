@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { overflow-y: scroll; }
+    html { overflow-y: scroll; scroll-behavior: smooth; }
     body { background: #faf9f7; color: #1a1a18; min-height: 100vh; }
     @media (prefers-color-scheme: dark) {
       body { background: #141412; color: #e8e6e0; }
@@ -50,6 +50,7 @@
       .back-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
       .back-btn:hover { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; }
     }
+    @keyframes fadein { to { opacity: 1; } }
   </style>
 </head>
 <body>

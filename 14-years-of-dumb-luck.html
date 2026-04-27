@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { overflow-y: scroll; }
-    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 2.1; }
+    html { overflow-y: scroll; scroll-behavior: smooth; }
+    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; opacity: 0; animation: fadein 0.6s ease forwards; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 2.4; }
     @media (prefers-color-scheme: dark) {
       body { background: #141412; color: #e8e6e0; }
       .corner { border-color: rgba(255,255,255,0.2); }
@@ -22,15 +22,11 @@
     .corner-bl { bottom: 0; left: 0; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; }
     .corner-br { bottom: 0; right: 0; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; }
     .doc-title { font-size: 26px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; margin-bottom: 3rem; }
-    .beat { margin-bottom: 1.4rem; font-size: 18px; line-height: 2.1; text-align: left; }
+    .beat { margin-bottom: 1.8rem; font-size: 18px; line-height: 2.4; text-align: left; }
     .pause { margin: 1.8rem 0; letter-spacing: 0.1em; color: #aaa; text-align: center; }
     .sig { font-size: 14px; letter-spacing: 0.15em; color: #888; margin-top: 3rem; font-style: italic; text-align: center; }
     .version-note { font-size: 13px; letter-spacing: 0.1em; color: #aaa; text-align: center; margin-top: 0.4rem; }
-    @media (max-width: 600px) {
-      .frame { text-align: center; padding: 3rem 1.5rem 4rem; margin: 1rem auto; }
-      .doc-title { font-size: 20px; }
-      body { font-size: 15px; }
-    }
+    @media (max-width: 600px) { .frame { padding: 3rem 1.25rem 4rem; margin: 1rem auto; text-align: left; } .doc-title { font-size: 20px; text-align: center; } .sig, .version-note, .divider { text-align: center; margin-left: auto; margin-right: auto; } body { font-size: 15px; line-height: 2.1; } }
     .divider { width: 24px; height: 0.5px; background: #ccc; margin: 2.4rem auto; }
     .back-btn { display: block; margin-top: 2.5rem; font-family: 'EB Garamond', Georgia, serif; font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px; border-radius: 2px; background: #1a1a18; color: #faf9f7; text-decoration: none; text-align: center; transition: all 0.2s; }
     .back-btn:hover { background: #faf9f7; color: #1a1a18; box-shadow: inset 0 0 0 1px #1a1a18; opacity: 1; }
@@ -38,6 +34,7 @@
       .back-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
       .back-btn:hover { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; }
     }
+    @keyframes fadein { to { opacity: 1; } }
   </style>
 </head>
 <body>
@@ -51,7 +48,7 @@
   <div class="divider"></div>
 
 
-  <p class="beat">14 years is a lot to gather that we had spent more than half our lives together.</p>
+  <p class="beat">14 years is quite the measure, more than half our lives together.</p>
 
   <p class="beat">This amazing girl has stuck with me through the thick and thin, and now with my dad bod maybe mostly from thin to thick.</p>
 
@@ -67,7 +64,9 @@
 
   <p class="beat">She had simply never met anybody like me before, not that it's a good thing for sure.</p>
 
-  <p class="beat">So as she picked up her jaw from all that appall, she rightfully wanted to show me that she's strong and that I had been wrong, but ironically that somehow got her legs weak all week - falling left and right, head over heels trying to fight.</p>
+  <p class="beat">So as she picked up her jaw from all that appall, she rightfully wanted to show me that she's strong and that I had been wrong.</p>
+
+  <p class="beat">But ironically, that somehow got her legs weak all week - falling left and right, head over heels trying to fight.</p>
 
   <p class="beat">What a mistake. She was straight up trapped for life and then ended up my wife. For goodness' sake, one silly girl's pride turned her into a stupid boy's bride. To put things lightly, that indeed escalated quickly.</p>
 

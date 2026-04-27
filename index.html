@@ -7,14 +7,13 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { overflow-y: scroll; }
-    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; font-family: 'EB Garamond', Georgia, serif; font-size: 17px; line-height: 1.8; }
+    html { overflow-y: scroll; scroll-behavior: smooth; }
+    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; opacity: 0; animation: fadein 0.6s ease forwards; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 1.8; }
     @media (prefers-color-scheme: dark) {
       body { background: #141412; color: #e8e6e0; }
       .corner { border-color: rgba(255,255,255,0.2); }
       .divider { background: rgba(255,255,255,0.12); }
       .group-label { color: rgba(255,255,255,0.3); }
-      .piece-link:hover { opacity: 0.5; }
       .piece-desc { color: rgba(255,255,255,0.45); }
       .version-note { color: rgba(255,255,255,0.3); }
     }
@@ -29,17 +28,21 @@
     .divider { width: 24px; height: 0.5px; background: #ccc; margin: 2.4rem auto; }
     .group { margin-bottom: 2.8rem; }
     .group-label { font-family: 'Share Tech Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #aaa; display: block; margin-bottom: 1.2rem; text-align: center; }
-    .piece { margin-bottom: 1.4rem; }
-    .piece-link { font-size: 19px; font-weight: 400; color: inherit; text-decoration: none; display: block; transition: opacity 0.2s; text-align: center; }
-    .piece-link:hover { opacity: 0.5; }
+    .piece { margin-bottom: 1.4rem; text-align: center; }
+    .piece-link { font-size: 21px; font-weight: 400; color: inherit; text-decoration: none; display: inline-block; transition: all 0.2s; border-bottom: 1px solid transparent; }
+    .piece-link:hover { opacity: 0.7; border-bottom: 1px solid rgba(26,26,24,0.3); }
+    @media (prefers-color-scheme: dark) {
+      .piece-link:hover { border-bottom-color: rgba(232,230,224,0.3); }
+    }
     .piece-desc { font-size: 14px; font-style: italic; color: #999; margin-top: 0.1rem; text-align: center; }
     .sig { font-size: 14px; letter-spacing: 0.15em; color: #888; margin-top: 3rem; font-style: italic; text-align: center; }
     .version-note { font-size: 13px; letter-spacing: 0.1em; color: #aaa; text-align: center; margin-top: 0.5rem; }
     @media (max-width: 600px) {
-      .frame { padding: 3rem 1.5rem 4rem; margin: 1rem auto; }
+      .frame { padding: 3rem 1.25rem 4rem; margin: 1rem auto; }
       .doc-title { font-size: 22px; }
       body { font-size: 16px; }
     }
+    @keyframes fadein { to { opacity: 1; } }
   </style>
 </head>
 <body>
@@ -91,7 +94,7 @@
     </div>
     <div class="piece">
       <a class="piece-link" href="peace-of-mind.html">Peace of Mind</a>
-      <p class="piece-desc">A Waltz With Risks.</p>
+      <p class="piece-desc">Spiritual Learnings.</p>
     </div>
     <div class="piece">
       <a class="piece-link" href="14-years-of-dumb-luck.html">14 Years of Dumb Luck</a>
@@ -102,18 +105,9 @@
   <div class="divider"></div>
 
   <div class="group">
-    <span class="group-label">NonXensical Chronicles</span>
     <div class="piece">
-      <a class="piece-link" href="nonxensical-chronicles.html">Chronicle #1</a>
-      <p class="piece-desc">Survive Till Twenty-Twenty-Five.</p>
-    </div>
-    <div class="piece">
-      <a class="piece-link" href="nonxensical-chronicles.html">Chronicle #2</a>
-      <p class="piece-desc">For The Artists.</p>
-    </div>
-    <div class="piece">
-      <a class="piece-link" href="nonxensical-chronicles.html">Chronicle #3</a>
-      <p class="piece-desc">Sleepless Nonsense In Sharp Fine Parts.</p>
+      <a class="piece-link" href="nonxensical-chronicles.html">NonXensical Chronicles</a>
+      <p class="piece-desc">#1 — #2 — #3</p>
     </div>
   </div>
 

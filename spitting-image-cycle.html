@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { overflow-y: scroll; }
-    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; }
+    html { overflow-y: scroll; scroll-behavior: smooth; }
+    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; opacity: 0; animation: fadein 0.6s ease forwards; }
     @media (prefers-color-scheme: dark) {
       body { background: #141412; color: #e8e6e0; }
       .collection { border-color: transparent; }
@@ -83,6 +83,8 @@
       .back-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
       .back-btn:hover { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; opacity: 1; }
     }
+    @keyframes fadein { to { opacity: 1; } }
+    @keyframes fadein { to { opacity: 1; } }
   </style>
 </head>
 <body>
@@ -361,6 +363,8 @@
   <p class="sig" style="font-style:italic; margin-top:1.5rem;">Zhen Bin Pan</p>
   <p class="sig" style="margin-top:0.3rem; font-style:normal; letter-spacing:0.2em; font-size:13px; color:inherit;">2026</p>
 
+  </div>
+
 </div>
 
 <script>
@@ -371,6 +375,7 @@ function show(i) {
   document.querySelectorAll('.nav-btn').forEach((b,j) => {
     b.classList.toggle('active', i===j);
   });
+  window.scrollTo(0, 0);
 }
 </script>
 </body>

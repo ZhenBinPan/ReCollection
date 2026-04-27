@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { overflow-y: scroll; }
-    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 2.1; }
+    html { overflow-y: scroll; scroll-behavior: smooth; }
+    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; opacity: 0; animation: fadein 0.6s ease forwards; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 2.4; }
     @media (prefers-color-scheme: dark) {
       body { background: #141412; color: #e8e6e0; }
       .corner { border-color: rgba(255,255,255,0.2); }
@@ -23,15 +23,11 @@
     .corner-br { bottom: 0; right: 0; border-bottom: 1px solid #ccc; border-right: 1px solid #ccc; }
     .doc-title { font-size: 26px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; text-align: center; margin-bottom: 0.3rem; }
     .doc-subtitle { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: #888; margin-bottom: 3rem; }
-    .stanza { margin-bottom: 1.6rem; }
+    .stanza { margin-bottom: 1.8rem; }
     .line { display: block; }
     .sig { font-size: 14px; letter-spacing: 0.15em; color: #888; margin-top: 3rem; font-style: italic; text-align: center; }
     .version-note { font-size: 13px; letter-spacing: 0.1em; color: #aaa; text-align: center; margin-top: 0.4rem; }
-    @media (max-width: 600px) {
-      .frame { text-align: center; padding: 3rem 1.5rem 4rem; margin: 1rem auto; }
-      .doc-title { font-size: 20px; }
-      body { font-size: 15px; }
-    }
+    @media (max-width: 600px) { .frame { padding: 3rem 1.25rem 4rem; margin: 1rem auto; text-align: left; } .doc-title { font-size: 20px; text-align: center; } .sig, .version-note, .divider { text-align: center; margin-left: auto; margin-right: auto; } body { font-size: 15px; line-height: 2.1; } }
     .divider { width: 24px; height: 0.5px; background: #ccc; margin: 2.4rem auto; }
     .back-btn { display: block; margin-top: 2.5rem; font-family: 'EB Garamond', Georgia, serif; font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px; border-radius: 2px; background: #1a1a18; color: #faf9f7; text-decoration: none; text-align: center; transition: all 0.2s; }
     .back-btn:hover { background: #faf9f7; color: #1a1a18; box-shadow: inset 0 0 0 1px #1a1a18; opacity: 1; }
@@ -39,6 +35,7 @@
       .back-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
       .back-btn:hover { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; }
     }
+    @keyframes fadein { to { opacity: 1; } }
   </style>
 </head>
 <body>
@@ -49,12 +46,24 @@
   <span class="corner corner-br"></span>
 
   <h1 class="doc-title">Peace of Mind</h1>
+  <p style="font-size:14px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; color:#888; margin-top:0.4rem;">Learning From The Room</p>
+
   <div class="divider"></div>
 
+  <div class="stanza">
+    <span class="line">This did not come from stillness or from grace,</span>
+    <span class="line">it came from that looping room I could not leave or face.</span>
+    <span class="line">From cold roads walked at nineteen through the night,</span>
+    <span class="line">from descending stairs in search of morning light.</span>
+    <span class="line">What the struggle left behind when it was done,</span>
+    <span class="line">was not a trophy earned but something quietly won.</span>
+  </div>
 
   <div class="stanza">
-    <span class="line">Although right now I am struggling, knees deep in a whirlpool of glue,</span>
-    <span class="line">I must write down my tussling and let my words stew in my own juice.</span>
+    <span class="line">Although right now I am struggling,</span>
+      <span class="line">knees deep in a whirlpool of glue,</span>
+    <span class="line">I must write down my tussling</span>
+      <span class="line">and let my words stew in my own juice.</span>
     <span class="line">This exact moment of abundant enchainment</span>
     <span class="line">is actually a monument of reluctant attainment.</span>
     <span class="line">It took billions of years, countless generations of strain,</span>
@@ -111,10 +120,13 @@
     <span class="line">A lullaby through thunderous nights and wondrous fights,</span>
     <span class="line">playing beneath the hood of this vast engine of life,</span>
     <span class="line">circling in perfect revolutions, seemingly effortless and free,</span>
-    <span class="line">and behind all this, it's still constant work, pain, and uncertainty.</span>
+    <span class="line">and behind all this,</span>
+      <span class="line">it's still constant work, pain, and uncertainty.</span>
   </div>
 
   <div class="stanza">
+    <span class="line">Future things are secret things, they belong to the Lord,</span>
+    <span class="line">so we surrender what we cannot carry and sheathe the sword.</span>
     <span class="line">We can put up a good fight every single day,</span>
     <span class="line">and still let it go, accepting all in the grand sway.</span>
     <span class="line">It's life, and I am grateful for all the dear gifts,</span>

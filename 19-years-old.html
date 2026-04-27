@@ -7,8 +7,8 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { overflow-y: scroll; }
-    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 2.1; }
+    html { overflow-y: scroll; scroll-behavior: smooth; }
+    body { background: #faf9f7; color: #1a1a18; min-height: 100vh; opacity: 0; animation: fadein 0.6s ease forwards; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 2.4; }
     @media (prefers-color-scheme: dark) {
       body { background: #141412; color: #e8e6e0; }
       .corner { border-color: rgba(255,255,255,0.2); }
@@ -26,24 +26,21 @@
     .doc-title { font-size: 26px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; text-align: center; margin-bottom: 0.3rem; }
     .doc-subtitle { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: #888; margin-bottom: 3rem; }
     .divider { width: 24px; height: 0.5px; background: #ccc; margin: 2.4rem auto; }
-    .stanza { margin-bottom: 1.6rem; }
+    .stanza { margin-bottom: 1.8rem; }
     .line { display: block; }
     .subsection-title { font-family: 'Share Tech Mono', monospace; font-size: 13px; letter-spacing: 0.15em; color: #aaa; text-align: center; display: block; margin: 2.4rem 0 1.6rem; }
-    .song-stanza { margin-bottom: 1.4rem; text-align: center; font-style: italic; }
+    .song-stanza { margin-bottom: 1.8rem; text-align: center; font-style: italic; }
     .song-line { display: block; }
     .sig { font-size: 14px; letter-spacing: 0.15em; color: #888; margin-top: 3rem; font-style: italic; text-align: center; }
     .version-note { font-size: 13px; letter-spacing: 0.1em; color: #aaa; text-align: center; margin-top: 0.4rem; }
-    @media (max-width: 600px) {
-      .frame { text-align: center; padding: 3rem 1.5rem 4rem; margin: 1rem auto; }
-      .doc-title { font-size: 19px; }
-      body { font-size: 15px; }
-    }
+    @media (max-width: 600px) { .frame { padding: 3rem 1.25rem 4rem; margin: 1rem auto; text-align: left; } .doc-title { font-size: 20px; text-align: center; } .sig, .version-note, .divider { text-align: center; margin-left: auto; margin-right: auto; } body { font-size: 15px; line-height: 2.1; } }
     .back-btn { display: block; margin-top: 2.5rem; font-family: 'EB Garamond', Georgia, serif; font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; padding: 16px; border-radius: 2px; background: #1a1a18; color: #faf9f7; text-decoration: none; text-align: center; transition: all 0.2s; }
     .back-btn:hover { background: #faf9f7; color: #1a1a18; box-shadow: inset 0 0 0 1px #1a1a18; opacity: 1; }
     @media (prefers-color-scheme: dark) {
       .back-btn { background: transparent; color: #e8e6e0; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3); }
       .back-btn:hover { background: #e8e6e0; color: #141412; box-shadow: inset 0 0 0 1px #e8e6e0; }
     }
+    @keyframes fadein { to { opacity: 1; } }
   </style>
 </head>
 <body>
@@ -53,7 +50,8 @@
   <span class="corner corner-bl"></span>
   <span class="corner corner-br"></span>
 
-  <h1 class="doc-title">I Was 19 Years Old 19 Years Ago</h1>
+  <h1 class="doc-title">I Was 19 Years Old</h1>
+  <p style="font-size:13px; letter-spacing:0.2em; text-transform:uppercase; text-align:center; color:#888; margin-top:0.4rem;">19 Years Ago</p>
 
   <div class="divider"></div>
 
@@ -86,8 +84,10 @@
   <div class="stanza">
     <span class="line">All thanks to my undiagnosed Borderline Personality Disorder,</span>
     <span class="line">Every big emotion hit like a tsunami crashing over my shoulders.</span>
-    <span class="line">The rumination followed after was a never-ending, self-induced inferno.</span>
-    <span class="line">The realization of being young and dumb didn't help either, that I know.</span>
+    <span class="line">The rumination followed after</span>
+      <span class="line">was a never-ending, self-induced inferno.</span>
+    <span class="line">The realization of being young and dumb</span>
+      <span class="line">didn't help either, that I know.</span>
   </div>
 
   <div class="stanza">
@@ -164,7 +164,8 @@
     <span class="line">Suddenly, a man on his morning drive, happened to coincide,</span>
     <span class="line">I panicked and pretended I was there simply for a roam on my own.</span>
     <span class="line">But then, I decided not to hide it, despite my pride inside denied.</span>
-    <span class="line">I encroached, like a roach, and yet he still offered to take me home.</span>
+    <span class="line">I encroached, like a roach,</span>
+      <span class="line">and yet he still offered to take me home.</span>
   </div>
 
   <div class="stanza">
@@ -177,8 +178,10 @@
   </div>
 
   <div class="stanza">
-    <span class="line">That was the first time I cried clinging onto a stranger at farewell,</span>
-    <span class="line">This is the first time I write about him in a story I would rarely tell.</span>
+    <span class="line">That was the first time I cried</span>
+      <span class="line">clinging onto a stranger at farewell,</span>
+    <span class="line">This is the first time I write about him</span>
+      <span class="line">in a story I would rarely tell.</span>
   </div>
 
   <div class="stanza">
